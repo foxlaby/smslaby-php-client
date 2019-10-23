@@ -1,0 +1,20 @@
+{
+    "name": "foxlaby/smslaby-client",
+    "description": "Check the integrity of the packages and if they are in weaknesses they can be sent to the zaoub application as an executable task.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Karim Mohamed",
+            "email": "komicho1996@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "FoxLaby\\SMSLaby\\": "src/"
+        }
+    }
+}
