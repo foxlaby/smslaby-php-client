@@ -7,7 +7,7 @@ use FoxLaby\SMSLaby\Send;
  * @param string $hash_key
  * @return object
  */
-function smslaby($hash_key)
+function smslaby()
 {
-    return (new Send($hash_key));
+    return (new Send(env('SMSLABY_HASH_KEY', '')));
 }

@@ -1,34 +1,39 @@
-# zaoub/dependo-php-client
-Check the integrity of the packages and if they are in weaknesses they can be sent to the zaoub application as an executable task.
+# foxlaby/smslaby-php-client
+You can send sms through a our server using your sender id by encryption key.
 
 ## Install via composer
 ```bash
-$ composer require zaoub/dependo-php-client
+$ composer require foxlaby/smslaby-client
 ```
 
-## Auto Check of packages
-```bash
-.\vendor\bin\zaoubdependo --type="text" --secret_key="<secret_key>" --send="yes"
-```
-- type: You can choose between two types of results display. which(text | json).
-- secret_key: If you are going to send automatically, you must specify the secret key.
-- send: Confirm sending results (yes | no).
+## Use
+```php
+use FoxLaby\SMSLaby\Send;
 
-## Check of packages
-```bash
-.\vendor\bin\zaoubdependo
+$sms = Send::init('<hash_key>')
+    ->lang('ar')
+    ->to('01×××××××××')
+    // ->sandbox(true)
+    ->message('body');
 ```
 
-Example of results:-
-```
-Checking...
-Number of vulnerability packets: 1
-------------------------------------------------------------
-Title: CVE-2019-10913: Reject invalid HTTP method overrides
-Version: v4.2.4
-Cve ID: CVE-2019-10913
-------------------------------------------------------------
-You want sent this result to zaoub app? (Y\N):
+## Use in laravel
+```php
+$sms = smslaby()
+    ->lang('ar')
+    ->to('01×××××××××')
+    // ->sandbox(true)
+    ->message('body');
 ```
 
-> The possibility of sending the weak packets is not effective yet
+### Hash Key:-
+Add a value you choose but you must add this value in a .env file
+```
+SMSLABY_HASH_KEY=<hash_key>
+```
+
+### Methods:-
+- lang: Add lang alpha-2 (ar|en).
+- to: Add the recipient number.
+- sandbox: For trial only, in this case the message will not be sent to the recipient but to our dashboard.
+- message: Message content.
