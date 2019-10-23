@@ -1,6 +1,6 @@
 {
     "name": "foxlaby/smslaby-client",
-    "description": "Check the integrity of the packages and if they are in weaknesses they can be sent to the zaoub application as an executable task.",
+    "description": "You can send sms through a our server using your sender id encryption key.",
     "type": "library",
     "license": "MIT",
     "authors": [
