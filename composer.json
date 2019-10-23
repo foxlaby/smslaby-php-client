@@ -16,5 +16,12 @@
         "psr-4": {
             "FoxLaby\\SMSLaby\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FoxLaby\\SMSLaby\\Adapters\\Laravel\\SMSLabyServiceProvider"
+            ]
+        }
     }
 }

@@ -30,10 +30,12 @@ class Send
     /**
      * Create a new Send Instance
      * @param string $hash_key
+     * @return object
      */
     public function __construct($hash_key = '') {
         $this->config = new Config($hash_key);
         $this->call = new CallServer($this->config);
+        return $this;
     }
 
     /**
