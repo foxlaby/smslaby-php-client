@@ -8,7 +8,7 @@ class Config implements \ArrayAccess
 
     public function __construct($hash_key) {
         $this->container = [
-            'endpoint' => 'http://sms.foxlaby.com/api/send',
+            'endpoint' => 'https://sms.foxlaby.com/api/send',
             'headers' => [
                 'X-hash-fox' => $hash_key,
             ]
